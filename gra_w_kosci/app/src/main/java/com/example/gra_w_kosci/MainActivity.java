@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView kostk4;
     private TextView kostk5;
     private ImageView Imagev,Imagev2,Imagev3,Imagev4,Imagev5;
+    private ImageView[] imag;
+    private int dice;
 
     private TextView wynik_los;
     private TextView wynik_gry;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> wyn_los;
     private ArrayList<Integer> wyn_gry;
 
+    private  Random random_s;
     private Random random1;
     private Random random2;
     private Random random3;
@@ -59,12 +62,17 @@ public class MainActivity extends AppCompatActivity {
         Imagev4=findViewById(R.id.imageView4);
         Imagev5=findViewById(R.id.imageView5);
 
+        imag = new ImageView[]{Imagev, Imagev2, Imagev3, Imagev4, Imagev5};
+        int[] dice={R.drawable.dice_0,R.drawable.dice_1,R.drawable.dice_2,R.drawable.dice_3,R.drawable.dice_4,R.drawable.dice_5,R.drawable.dice_6};
+
+
         wynik_los=findViewById(R.id.wynik_los);
         wynik_gry=findViewById(R.id.wynik_gry);
         l_rzut=findViewById(R.id.l_rzut);
         wyn_los=new ArrayList<>();
         wyn_gry= new ArrayList<>();
 
+        random_s=new Random();
         random1=new Random();
         random2=new Random();
         random3=new Random();
@@ -90,80 +98,12 @@ public class MainActivity extends AppCompatActivity {
                 wyn_los.add(random_k4);
                 wyn_los.add(random_k5);
 
-                //pirewsza kosc
-                if(random_k1==1) {
-                    Imagev.setImageResource(R.drawable.dice_1);
-                } else if (random_k1==2) {
-                    Imagev.setImageResource(R.drawable.dice_2);
-                }   else if (random_k1==3) {
-                    Imagev.setImageResource(R.drawable.dice_3);
-                }    else if (random_k1==4) {
-                    Imagev.setImageResource(R.drawable.dice_4);
-                }    else if (random_k1==5) {
-                    Imagev.setImageResource(R.drawable.dice_5);
-                }    else if (random_k1==6) {
-                    Imagev.setImageResource(R.drawable.dice_6);
+                for (int i = 0; i < imag.length; i++) {
+                    int wynik = wyn_los.get(i);
+                    int resId = dice[wynik];
+                    imag[i].setImageResource(resId);
                 }
 
-                //druga kosc
-                if(random_k2==1) {
-                    Imagev2.setImageResource(R.drawable.dice_1);
-                } else if (random_k2==2) {
-                    Imagev2.setImageResource(R.drawable.dice_2);
-                }   else if (random_k2==3) {
-                    Imagev2.setImageResource(R.drawable.dice_3);
-                }    else if (random_k2==4) {
-                    Imagev2.setImageResource(R.drawable.dice_4);
-                }    else if (random_k2==5) {
-                    Imagev2.setImageResource(R.drawable.dice_5);
-                }    else if (random_k2==6) {
-                    Imagev2.setImageResource(R.drawable.dice_6);
-                }
-
-                //trzecia kosc
-                if(random_k3==1) {
-                    Imagev3.setImageResource(R.drawable.dice_1);
-                } else if (random_k3==2) {
-                    Imagev3.setImageResource(R.drawable.dice_2);
-                }   else if (random_k3==3) {
-                    Imagev3.setImageResource(R.drawable.dice_3);
-                }    else if (random_k3==4) {
-                    Imagev3.setImageResource(R.drawable.dice_4);
-                }    else if (random_k3==5) {
-                    Imagev3.setImageResource(R.drawable.dice_5);
-                }    else if (random_k3==6) {
-                    Imagev3.setImageResource(R.drawable.dice_6);
-                }
-
-                //czwarta kosc
-                if(random_k4==1) {
-                    Imagev4.setImageResource(R.drawable.dice_1);
-                } else if (random_k4==2) {
-                    Imagev4.setImageResource(R.drawable.dice_2);
-                }   else if (random_k4==3) {
-                    Imagev4.setImageResource(R.drawable.dice_3);
-                }    else if (random_k4==4) {
-                    Imagev4.setImageResource(R.drawable.dice_4);
-                }    else if (random_k4==5) {
-                    Imagev4.setImageResource(R.drawable.dice_5);
-                }    else if (random_k4==6) {
-                    Imagev4.setImageResource(R.drawable.dice_6);
-                }
-
-                //piata kosc
-                if(random_k5==1) {
-                    Imagev5.setImageResource(R.drawable.dice_1);
-                } else if (random_k5==2) {
-                    Imagev5.setImageResource(R.drawable.dice_2);
-                }   else if (random_k5==3) {
-                    Imagev5.setImageResource(R.drawable.dice_3);
-                }    else if (random_k5==4) {
-                    Imagev5.setImageResource(R.drawable.dice_4);
-                }    else if (random_k5==5) {
-                    Imagev5.setImageResource(R.drawable.dice_5);
-                }    else if (random_k5==6) {
-                    Imagev5.setImageResource(R.drawable.dice_6);
-                }
 
                 Log.d("wynik los",String.valueOf(wyn_los));
 
@@ -220,6 +160,10 @@ public class MainActivity extends AppCompatActivity {
                 wynik_los.setText("Wynik tego losowania: "+sum);
                 sum_gry=0;
                 wynik_gry.setText("Wynik gry: "+sum_gry);
+
+                for (int i = 0; i < imag.length; i++) {
+                    imag[i].setImageResource(R.drawable.dice_0); // Ustawienie obrazka domyślnego
+                }
             }
         });
     }
