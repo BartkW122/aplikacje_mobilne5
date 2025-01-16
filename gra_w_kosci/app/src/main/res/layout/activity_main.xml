@@ -47,58 +47,24 @@
 
         <TextView
             android:id="@+id/kostk1"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="9dp"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:text="?"
-            android:textSize="48sp"
-            tools:layout_editor_absoluteY="215dp" />
+            style="@style/grawkosci" />
 
         <TextView
             android:id="@+id/kostk2"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="9dp"
-            android:gravity="center"
-            android:text="?"
-            android:textSize="48sp"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="227dp" />
+            style="@style/grawkosci" />
 
         <TextView
             android:id="@+id/kostk3"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="9dp"
-            android:gravity="center"
-            android:text="?"
-            android:textSize="48sp"
-            tools:layout_editor_absoluteX="202dp"
-            tools:layout_editor_absoluteY="214dp" />
+            style="@style/grawkosci" />
 
         <TextView
             android:id="@+id/kostk4"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="9dp"
-            android:gravity="center"
-            android:text="?"
-            android:textSize="48sp"
-            tools:layout_editor_absoluteX="278dp"
-            tools:layout_editor_absoluteY="239dp" />
+            style="@style/grawkosci" />
 
         <TextView
             android:id="@+id/kostk5"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="9dp"
-            android:gravity="center"
-            android:text="?"
-            android:textSize="48sp"
-            tools:layout_editor_absoluteX="343dp"
-            tools:layout_editor_absoluteY="215dp" />
+            style="@style/grawkosci"
+             />
     </LinearLayout>
 
 
